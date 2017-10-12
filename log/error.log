@@ -1,0 +1,30 @@
+[Thu Oct 05 10:45:19.007024 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:45:19.017554 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:45:19.496911 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:45:19.504472 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:45:19.789892 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:45:19.804214 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:45:20.012855 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:45:20.022783 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:45:20.323269 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:45:20.336363 2017] [authz_core:error] [pid 7361] [client 127.0.0.1:43656] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:49:13.833380 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:49:13.845303 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:49:14.255887 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:49:14.266699 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:49:14.528038 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:49:14.539075 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:49:14.752726 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:49:14.764554 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:49:14.991913 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:49:15.005537 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:45570] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:50:37.622593 2017] [authz_core:error] [pid 7532] [client 127.0.0.1:46260] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:50:37.634591 2017] [authz_core:error] [pid 7532] [client 127.0.0.1:46260] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:50:38.173908 2017] [authz_core:error] [pid 7532] [client 127.0.0.1:46260] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:50:38.188428 2017] [authz_core:error] [pid 7532] [client 127.0.0.1:46260] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:53:04.401082 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:47448] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:53:04.415194 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:47448] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:53:05.034004 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:47448] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:53:05.045397 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:47448] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
+[Thu Oct 05 10:53:05.255515 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:47448] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/
+[Thu Oct 05 10:53:05.267599 2017] [authz_core:error] [pid 7529] [client 127.0.0.1:47448] AH01630: client denied by server configuration: /home/hangpt/sites/mkex.com/public_html/favicon.ico, referer: http://mkex.com/
