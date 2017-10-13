@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="319dfee7-2d16-49c9-a7de-dc72146087ea" name="Default" comment="" />
+    <list default="true" id="319dfee7-2d16-49c9-a7de-dc72146087ea" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/magicento.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,8 +11,42 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public_html/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <folding>
+                <marker date="1507804652907" expanded="false" signature="1380:1393" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="2486:2500" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="3075:3089" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="3204:3219" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="3603:3615" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="3672:3687" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="5472:5486" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="5601:5616" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="12698:12712" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="12797:12812" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="13179:13193" ph="..." />
+                <marker date="1507804652907" expanded="false" signature="13279:13294" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/public_html/index.html" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -87,12 +123,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507805355198</updated>
-      <workItem from="1507805356462" duration="76000" />
+      <workItem from="1507805356462" duration="858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76000" />
+    <option name="totallyTimeSpent" value="858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="53" width="1303" height="780" extended-state="6" />
@@ -125,5 +161,28 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public_html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <marker date="1507804652907" expanded="false" signature="1380:1393" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="2486:2500" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="3075:3089" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="3204:3219" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="3603:3615" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="3672:3687" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="5472:5486" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="5601:5616" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="12698:12712" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="12797:12812" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="13179:13193" ph="..." />
+            <marker date="1507804652907" expanded="false" signature="13279:13294" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

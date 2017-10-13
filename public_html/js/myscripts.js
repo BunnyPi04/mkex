@@ -82,15 +82,24 @@
 		htmlImg = `<img src="`+img+`" style="width:100%"/>`;
 		$('#show-img').html(htmlImg);
 	}
-function checkout() {
-	// var data = $('form').serializeArray().reduce(function(obj, item) {
- //    obj[item.name] = item.value;
- //    return obj;
-	// }, {});
-	// console.log(data);
-		console.log(shopping_cart);
-
+function checkcart() {
+	if (shopping_cart==[]) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }
+$( "form" ).submit(function( event ) {
+  $.ajax({
+        type: 'POST',
+        url: 'index.php',
+        data: $(this).serializeArray(),
+        success: function() {
+            location = '<?php echo $continue; ?>';
+        }
+    });
+});
 
 // SEARCH PRODUCT
 $(document).ready(function(){
@@ -154,6 +163,8 @@ $(document).ready(function(){
 				})
 		    });
     		$(".cusDiv").toggle();
+    		$('html,body').animate({ scrollTop: $(".cusDiv").offset().top},'slow');
+
     	});
     	$(".pro").click(function() {
 
@@ -217,6 +228,7 @@ $(document).ready(function(){
 					})
 		    	});
     		$(".proDiv").toggle();
+    		$('html,body').animate({ scrollTop: $(".proDiv").offset().top},'slow');
 
     		//show country
     		$.getJSON('http://magento1.dev/index.php/hello/index/country', function(data) {
@@ -260,6 +272,7 @@ $(document).ready(function(){
 				})
 		    });
     		$(".payDiv").toggle();
+    		$('html,body').animate({ scrollTop: $(".payDiv").offset().top},'slow');
     	});
     	$(".ship").click(function() {
     		//SHIPPING METHOD
@@ -290,6 +303,7 @@ $(document).ready(function(){
 				})
 		    });
     		$(".shipDiv").toggle();
+    		$('html,body').animate({ scrollTop: $(".shipDiv").offset().top},'slow');
     	});
     	$("#searchButton").click(function() {
     		$(".seaDiv").css('display','block');

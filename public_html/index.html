@@ -4,6 +4,10 @@
 <title>hangpt2@smartosc.com</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/myscripts.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -209,7 +213,7 @@
                             </div>
                         </div>
                     </div>
-                    <form name="frm" id="frm" action="index.html" onsubmit="checkout()" method="post">
+                    <form name="frm" id="frm" onsubmit="checkcart()" method="post">
 	                    <div class="panel-body">
 	                        
 								<div class="form-group">
@@ -309,48 +313,4 @@
 
     </div>
 </body>
-<style>
-.container {
-	margin-top: 5px;
-}
-.panel-body {
-    height: 400px;
-    overflow: scroll;
-}
-.jumbotron {
-	background-color: coral;
-}
-input[type="button"] {
-	white-space: normal;
-}
-#order_body {
-    width: 100%;
-}
-#search-frm {
-	display: table;
-}
-.fa-info-circle, .glyphicon-shopping-cart {
-	padding: 0px 10px;
-}
-.product-name {
-    font-size: 18px;
-    font-weight: bold;
-}
-.h {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.order_body td {
-	padding: 5px;
-}
-.img-div {
-	text-align: center;
-}
-.small-img {
-	width: 100px;
-}
-small {
-	font-weight: normal;
-}
-</style>
 </html>
