@@ -1,4 +1,4 @@
-
+jQuery.noConflict();
     var shopping_cart=[];
 
 	function display_cart() {
@@ -72,6 +72,12 @@
 		else if (size=="80") {
 			$('#Pro_size').html("L");
 		}
+		else if (size=="77") {
+			$('#Pro_size').html("XS");
+		}
+		else if (size=="81") {
+			$('#Pro_size').html("XL");
+		}
 		else {
 			$('#Pro_size').html(size);
 		}
@@ -82,24 +88,28 @@
 		htmlImg = `<img src="`+img+`" style="width:100%"/>`;
 		$('#show-img').html(htmlImg);
 	}
+	//check if cart empty
 function checkcart() {
-	if (shopping_cart==[]) {
+	if (shopping_cart.length<1) {
+		alert("Your shopping cart is empty!");
 		return false;
 	}
 	else {
+		var $inputs = $('#frm :input');
+        console.log(inputs);
+	    var values = {};
+	    $inputs.each(function() {
+	        values[this.name] = $(this).val();
+//	        document.write($(this).val());
+	    });
+	    console.log(values);
+	    var textB = "";
+	    textB = '<p><b>Your name: </b>'+ values.first_name+'</p>';
+//	    $(document.body).append(form);
+		$("#invoice").html(textB);
 		return true;
 	}
-}
-$( "form" ).submit(function( event ) {
-  $.ajax({
-        type: 'POST',
-        url: 'index.php',
-        data: $(this).serializeArray(),
-        success: function() {
-            location = '<?php echo $continue; ?>';
-        }
-    });
-});
+ }
 
 // SEARCH PRODUCT
 $(document).ready(function(){
@@ -117,6 +127,10 @@ $(document).ready(function(){
 	        	textP+=						'<div class="col-md-6">';
 		        textP+=							`<h4><strong> ${d.name}</strong></h4>`;
 				textP+=							`<h4><small>SKU: ${d.sku}</small></h4>`;
+				var str = d.description;
+				str = str.replace(/\"/g, "&quot;");
+				d.description = str;
+				textP+=							`<h4><small>${d.description}</small></h4>`;
 				textP+=						'</div>';
 				textP+=						'<div class="col-md-3" class="img-div" >';
 				textP+=							`<img class="small-img" src="${d.img}"/>`;
@@ -130,17 +144,56 @@ $(document).ready(function(){
 				textP+=							'<div class="row">';
 				textP+=								'Price: '+price+ ' $';
 				textP+=							'</div>';
+				textP+=							'<div class="row">';
+				var size="";
+				if (d.size=="78") {
+					size = "S";
+				}
+				else if (d.size=="79") {
+					size = "M";
+				}
+				else if (d.size=="80") {
+					size="L";
+				}
+				else if (d.size=="77") {
+					size="XS";
+				}
+				else if (d.size=="81") {
+					size="XL";
+				}
+				else {
+					size = d.size;
+				}
+				textP+=								'Size: '+size;
+				textP+=							'</div>';
 				textP+=						'</div>';
 				textP+=					'</div>';
 //				console.log(img);
 		        $("#search-panel").html(textP);
 			})
 	    });
-	});
+ 	});
+
+ 	//checkout
+	$("#frm").submit(function(){
+		alert('ssss');
+        var $inputs = $('#frm :input');
+        console.log(inputs);
+	    var values = {};
+	    $inputs.each(function() {
+	        values[this.name] = $(this).val();
+//	        document.write($(this).val());
+	    });
+	    console.log(values);
+	    var textB = "";
+	    textB = '<p><b>Your name: </b>'+ values.first_name+'</p>';
+//	    $(document.body).append(form);
+		$("#invoice").html(textB);
+    });
 });
 
 
-//toggle function
+//toggle show function
 
     $(document).ready(function() {
     	$(".cus").click(function() {
@@ -293,7 +346,7 @@ $(document).ready(function(){
 						case "1": 
 							enable = 'Yes'; break;
 						default: 
-							enable = 'No';
+							enable = 'No'; break;
 					}
 					textS+=								'Enable: '+enable;
 					textS+=							'</div>';
