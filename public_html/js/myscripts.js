@@ -89,28 +89,30 @@ jQuery.noConflict();
 		$('#show-img').html(htmlImg);
 	}
 	//check if cart empty
-function checkcart() {
-	if (shopping_cart.length<1) {
-		alert("Your shopping cart is empty!");
-		return false;
-	}
-	else {
-		var $inputs = $('#frm :input');
-        console.log(inputs);
-	    var values = {};
-	    $inputs.each(function() {
-	        values[this.name] = $(this).val();
-//	        document.write($(this).val());
-	    });
-	    console.log(values);
-	    var textB = "";
-	    textB = '<p><b>Your name: </b>'+ values.first_name+'</p>';
-//	    $(document.body).append(form);
-		$("#invoice").html(textB);
-		return true;
-	}
- }
-
+//  $("#frm").submit(function(event) {
+//  	die('ssss');
+//  	if (shopping_cart.length<1) {
+// 		alert("Your shopping cart is empty!");
+// 		return false;
+// 	}
+// 	else {
+// 		console.log($(this).serializeArray());
+// 		event.preventDefault();
+// // 		var $inputs = $('#frm :input');
+// //         console.log(inputs);
+// // 	    var values = {};
+// // 	    $inputs.each(function() {
+// // 	        values[this.name] = $(this).val();
+// // //	        document.write($(this).val());
+// // 	    });
+// // 	    console.log(values);
+// // 	    var textB = "";
+// // 	    textB = '<p><b>Your name: </b>'+ values.first_name+'</p>';
+// // //	    $(document.body).append(form);
+// // 		$("#invoice").html(textB);
+// 		return true;
+// 	}
+//  });
 // SEARCH PRODUCT
 $(document).ready(function(){
 	$("#searchButton").click(function() {
@@ -176,19 +178,49 @@ $(document).ready(function(){
 
  	//checkout
 	$("#frm").submit(function(){
-		alert('ssss');
-        var $inputs = $('#frm :input');
-        console.log(inputs);
-	    var values = {};
-	    $inputs.each(function() {
-	        values[this.name] = $(this).val();
-//	        document.write($(this).val());
-	    });
-	    console.log(values);
-	    var textB = "";
-	    textB = '<p><b>Your name: </b>'+ values.first_name+'</p>';
-//	    $(document.body).append(form);
-		$("#invoice").html(textB);
+		if (shopping_cart.length<1) {
+			alert("Your shopping cart is empty!");
+			return false;
+		}
+		else {
+			var inputs={};
+//			var inputs=$(this).serializeArray()
+			$.each($('#frm').serializeArray(),function(i, field) {
+				inputs[field.name]=field.value;
+			});
+			console.log(inputs);
+
+			event.preventDefault();
+		}	
+		var textB = "<h3>Your invoice information</h3>";
+		textB+=		"<p><b>Your name: </b>"+inputs.first_name+"&nbsp"+inputs.last_name+"</p>";
+		textB+=		"<p><b>Your email address: </b>"+inputs.email+"</p>";
+		textB+=		"<p><b>Your address receive delivery: </b>"+inputs.address+"</p>";
+		textB+=		"<p><b>City: </b>"+inputs.city+"</p>";
+		textB+=		"<p><b>State: </b>"+inputs.state+"</p>";
+		textB+=		"<p><b>Country: </b>"+inputs.country+"</p>";
+		textB+=		"<p><b>Your address zip/postal code: </b>"+inputs.zip+"</p>";
+		textB+=		"<p><b>Your phone contact number: </b>"+inputs.phone+"</p>";
+		textB+=		"<p><b>Payment method: </b>"+inputs.pay+"</p>";
+		textB+=		"<p><b>Shipping method: </b>"+inputs.ship+"</p>";
+		textB+=		"<h4><b>Your cart: </b>"+"</h4>";
+		textB+=		"<ul>";
+		var i=0;
+		var total_price = 0;
+		for (var product in shopping_cart) {
+			i++;
+			textB+= '<li class="li_item"><p><b>Product '+i+':</b> '+shopping_cart[product].Name+'<br/>';
+			textB+= "SKU: "+shopping_cart[product].SKU+"<br/>";
+			textB+= "Weight: "+shopping_cart[product].Weight+"<br/>";
+			textB+= "Price: "+shopping_cart[product].Price+" $<br/></p></li>";
+			total_price+=shopping_cart[product].Price;
+		}
+//		console.log(inputs.first_name);
+		textB+= 	"</ul><p><h4>Total: "+total_price+ " $</h4></p>";
+ 	    $("#invoice").html(textB);
+ 	    $('html,body').animate({ scrollTop: $("#invoice").offset().top},'slow');
+// //	    $(document.body).append(form);
+// 		$("#invoice").html(textB);
     });
 });
 
