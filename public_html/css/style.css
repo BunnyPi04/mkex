@@ -43,8 +43,9 @@ input[type="button"] {
 small {
 	font-weight: normal;
 }
-ul {
+.in {
 	display: inline-block;
+	width: 100%;
 }
 .li_item {
 	float: left;

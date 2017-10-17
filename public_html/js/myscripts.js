@@ -1,6 +1,6 @@
 jQuery.noConflict();
     var shopping_cart=[];
-
+    var link = 'http://magento1.dev/index.php/hello/index/';
 	function display_cart() {
 	    var order_body = document.getElementById('order_body');
 	    while(order_body.rows.length>0) {
@@ -119,7 +119,7 @@ $(document).ready(function(){
 //		document.getElementById("#seaDiv").style.display="block";
 		var searchText = $("#searchText").val();
 		console.log(searchText);
-		var searchURL = 'http://magento1.dev/index.php/hello/index/searchproduct?search='+searchText;
+		var searchURL = link+'searchproduct?search='+searchText;
 		console.log(searchURL);
 		$.getJSON(searchURL, function(data5) {
         //console.log(data);
@@ -184,7 +184,6 @@ $(document).ready(function(){
 		}
 		else {
 			var inputs={};
-//			var inputs=$(this).serializeArray()
 			$.each($('#frm').serializeArray(),function(i, field) {
 				inputs[field.name]=field.value;
 			});
@@ -204,7 +203,7 @@ $(document).ready(function(){
 		textB+=		"<p><b>Payment method: </b>"+inputs.pay+"</p>";
 		textB+=		"<p><b>Shipping method: </b>"+inputs.ship+"</p>";
 		textB+=		"<h4><b>Your cart: </b>"+"</h4>";
-		textB+=		"<ul>";
+		textB+=		'<ul class="in">';
 		var i=0;
 		var total_price = 0;
 		for (var product in shopping_cart) {
@@ -215,12 +214,20 @@ $(document).ready(function(){
 			textB+= "Price: "+shopping_cart[product].Price+" $<br/></p></li>";
 			total_price+=shopping_cart[product].Price;
 		}
-//		console.log(inputs.first_name);
 		textB+= 	"</ul><p><h4>Total: "+total_price+ " $</h4></p>";
  	    $("#invoice").html(textB);
  	    $('html,body').animate({ scrollTop: $("#invoice").offset().top},'slow');
-// //	    $(document.body).append(form);
-// 		$("#invoice").html(textB);
+ 	    $('#Subjects').click(function() {
+	    $.ajax({
+	        type: 'POST',
+	        url: 'magento1.dev/checkout/onepage',
+	        data: { studentNumber: $('#StudentID').val() },
+	        success: function(data)
+	        {
+	            $('#curriculum').html(data);
+	        }
+	    });
+});
     });
 });
 
@@ -230,7 +237,7 @@ $(document).ready(function(){
     $(document).ready(function() {
     	$(".cus").click(function() {
     		// CUSTOMER
-		    $.getJSON('http://magento1.dev/index.php/hello/index/customer', function(data1) {
+		    $.getJSON(link+'customer', function(data1) {
 		        //console.log(data);
 		        var textC='';
 		      	data1.forEach(function(d){
@@ -254,7 +261,7 @@ $(document).ready(function(){
     	$(".pro").click(function() {
 
 			// PRODUCT
-				$.getJSON('http://magento1.dev/index.php/hello/index/product', function(data2) {
+				$.getJSON(link+'product', function(data2) {
 			        //console.log(data);
 			        var textP='';
 			      	data2.forEach(function(d){
@@ -287,7 +294,7 @@ $(document).ready(function(){
 					})
 			    });
 			    //get payment list
-			    $.getJSON('http://magento1.dev/index.php/hello/index/payment', function(data) {
+			    $.getJSON(link+'payment', function(data) {
 			        var textP='';
 			      	data.forEach(function(d){
 						switch (d.status) {
@@ -300,7 +307,7 @@ $(document).ready(function(){
 					})
 		    	});
 		    	//get shipping list
-			    $.getJSON('http://magento1.dev/index.php/hello/index/shipping', function(data) {
+			    $.getJSON(link+'shipping', function(data) {
 			        var textP='';
 			      	data.forEach(function(d){
 						switch (d.status) {
@@ -316,7 +323,7 @@ $(document).ready(function(){
     		$('html,body').animate({ scrollTop: $(".proDiv").offset().top},'slow');
 
     		//show country
-    		$.getJSON('http://magento1.dev/index.php/hello/index/country', function(data) {
+    		$.getJSON(link+'country', function(data) {
 			        //console.log(data);
 			        var textP='';
 			      	data.forEach(function(d){
@@ -329,7 +336,7 @@ $(document).ready(function(){
 
     	$(".pay").click(function() {
     		//PAYMENT METHOD
-			$.getJSON('http://magento1.dev/index.php/hello/index/payment', function(data3) {
+			$.getJSON(link+'payment', function(data3) {
 		        //console.log(data);
 		        var textPa='';
 		      	data3.forEach(function(d){
@@ -361,7 +368,7 @@ $(document).ready(function(){
     	});
     	$(".ship").click(function() {
     		//SHIPPING METHOD
-			$.getJSON('http://magento1.dev/index.php/hello/index/shipping', function(data4) {
+			$.getJSON(link+'shipping', function(data4) {
 		        //console.log(data);
 		        var textS='';
 		      	data4.forEach(function(d){
