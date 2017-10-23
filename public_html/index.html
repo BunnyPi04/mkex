@@ -121,52 +121,143 @@
     	<input type="button" class="btn btn-warning pro" value="Show Product"> 
     <!-- Show product -->	
     	<div class="proDiv row" style="display: none;">
-    		<div class="col-md-6">
-    			<div class="panel panel-warning">
-    				<div class="panel-heading" style="display: block;">
-                        <h5 class="panel-title">Product for sale</h5>
-                    </div>
-                    <div class="panel-body">
-                    	<div id="pro-panel">
+    		<div class="row" id="pro" style="display: none;">
+	    		<div class="col-md-6">
+	    			<div class="panel panel-warning">
+	    				<div class="panel-heading" style="display: block;">
+	                        <h5 class="panel-title">Product for sale</h5>
+	                    </div>
+	                    <div class="panel-body">
+	                    	<div id="pro-panel">
 
-                    	</div>                    	
-                    </div>             
-    			</div>
-    		</div>
-    		<!-- product information-->
-    		<div class="col-md-6">
-                <div class="panel panel-info">
+	                    	</div>                    	
+	                    </div>             
+	    			</div>
+	    		</div>
+	    		<!-- product information-->
+	    		<div class="col-md-6">
+	                <div class="panel panel-info">
+	                    <div class="panel-heading">
+	                        <div class="panel-title">
+	                            <div class="row">
+	                                <div class="col-md-6">
+	                                    <h5><i class="fa fa-info-circle" aria-hidden="true"></i>Product infomation</h5>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="panel-body">
+	                    	<div class="col-md-6">
+	                    		<h5><b><span id="Pro_name"></span></b></h5>
+	                    		<h5><small>SKU: <span id="Pro_sku"></span></small></h5>
+	                    		<h5><b>Price: </b><span id="Pro_price"></span> $</h5>
+	                    		<h5><b>Type: </b><span id="Pro_type_id"></span></h5>
+	                    		<h5><b>Size: </b><span id="Pro_size"></span></h5>
+	                    		<h5><b>Fit: </b><span id="Pro_fit"></span></h5>
+	                    		<h5><b>Color: </b><span id="Pro_color"></span></h5>
+	                    		<h5><b>Weight: </b><span id="Pro_weight"></span></h5>
+	                    		<h5><b>Description: </b></h5>
+	                    		<h5><span id="Pro_description"></span></h5>
+	                    	</div>
+	                    	<div class="col-md-6" id="show-img">
+	                    		<!-- display product img-->
+	                    	</div>
+	                
+	                    </div>
+					</div>
+          		</div>
+            </div>
+            
+            <!-- Invoice information-->
+            <div class="col-md-6" id="info" style="display: none;">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="panel-title">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h5><i class="fa fa-info-circle" aria-hidden="true"></i>Product infomation</h5>
+                                    <h5><span class="glyphicon glyphicon-shopping-cart"></span>Choose customer and store</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="panel-body">
-                    	<div class="col-md-6">
-                    		<h5><b><span id="Pro_name"></span></b></h5>
-                    		<h5><small>SKU: <span id="Pro_sku"></span></small></h5>
-                    		<h5><b>Price: </b><span id="Pro_price"></span> $</h5>
-                    		<h5><b>Type: </b><span id="Pro_type_id"></span></h5>
-                    		<h5><b>Size: </b><span id="Pro_size"></span></h5>
-                    		<h5><b>Fit: </b><span id="Pro_fit"></span></h5>
-                    		<h5><b>Color: </b><span id="Pro_color"></span></h5>
-                    		<h5><b>Weight: </b><span id="Pro_weight"></span></h5>
-                    		<h5><b>Description: </b></h5>
-                    		<h5><span id="Pro_description"></span></h5>
-                    	</div>
-                    	<div class="col-md-6" id="show-img">
-                    		<!-- display product img-->
-                    	</div>
-                
+                    <div class="panel-body"> 
+                        
+						<!-- <div class="form-group">
+					    	<label>Firstname</label>
+						    <input type="text" class="form-control" placeholder="First name" required="1" name="first_name" id="first_name" value="">
+					    </div>
+					    <div class="form-group">
+					    	<label>Lastname</label>
+						    <input type="text" class="form-control" placeholder="Last name" required="1" name="last_name" id="last_name" value="">
+					    </div>
+					    <div class="form-group">
+						    <label>Email address</label>
+						    <input type="email" class="form-control" placeholder="name@example.com" required="1" name="email" value="">
+						</div>
+						<div class="form-group">
+						    <label>Address (ship to this address)</label>
+						    <input type="text" class="form-control" placeholder="Your address" required="1" name="address" value="">
+						</div>
+						<div class="form-group">
+						    <label>City</label>
+						    <input type="text" class="form-control" placeholder="Your address city" required="1" name="city" value="">
+						</div>
+						<div class="form-group">
+						    <label>State/Province</label>
+						    <input type="text" class="form-control" placeholder="" required="1" name="state" value="">
+						</div>
+						<div class="form-group">
+						    <label>Zip/Postal code</label>
+						    <input type="text" class="form-control" placeholder="" required="1" name="zip" value="">
+						</div>
+						<div class="form-group">
+						    <label>Country</label>
+						    <select id="country" class="form-control selcls" name="country">
+						    	 View country list get from magento
+						    </select>
+						</div>
+						<div class="form-group">
+						    <label>Telephone</label>
+						    <input type="text" class="form-control" placeholder="Your contact Telephone number" required="1" name="phone" value="">
+						</div> -->
+						<div class="form-group">
+							<label>Please choose customer</label>
+							<select id="cus-id" class="form-control selcls" name="cus-id">
+								
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Please choose Store</label>
+							<select id="store-id" class="form-control selcls" name="store-id">
+								
+							</select>
+						</div>
+<!-- 						    <div class="form-group">
+						    <label>Payment method: </label>
+						   	<select id="payment" class="form-control selcls" name="pay">
+						    	
+						    </select>
+					    </div>
+					    <div class="form-group">
+						    <label>Shipping method: </label>
+						   	<select id="shipping" class="form-control selcls" name="ship">
+						    	
+						    </select> 
+					    </div>-->
+						
                     </div>
+                    <div class="panel-footer">
+					<div class="row text-center">
+						<div class="col-md-3 col-md-offset-9">
+							<button class="btn btn-success btn-block" id="send">Next</button>
+						</div>
+					</div>
 				</div>
             </div>
-            <!-- Cart-->
-    		<div class="col-md-6">
+
+        </div>
+         <!-- Cart-->
+    		<div class="col-md-6" id="cartDiv" style="display: none;">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="panel-title">
@@ -184,134 +275,56 @@
                     </div>
                     <div class="panel-footer">
 					<div class="row text-center">
-						<div class="col-md-3">
-							<button type="button" class="btn btn-danger btn-block" id="clear_cart">
+						<div class="col-md-3"  id="clear_cart">
+							<button type="button" class="btn btn-danger btn-block">
 								Clear cart
 							</button>
 						</div>
 						<div class="col-md-9">
 							<h4 class="text-right">Total <strong id="cart_total"></strong></h4>
 						</div>
-<!-- 						<div class="col-md-3">
-							<button type="button" class="btn btn-success btn-block" onclick="">
-								Checkout
-							</button>
+						<div class="col-md-3">
+							<input type="button" class="btn btn-success btn-block checkout-btn"
+								value="Checkout"/>
 						</div>
- -->					</div>
+					</div>
 				</div>
                 </div>
             </div>
-            <!-- Invoice information-->
-            <div class="col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="panel-title">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5><span class="glyphicon glyphicon-shopping-cart"></span>Your personal information</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <form name="frm" id="frm" method="get">
-	                    <div class="panel-body"> 
-	                        
-								<div class="form-group">
-							    	<label>Firstname</label>
-								    <input type="text" class="form-control" placeholder="First name" required="1" name="first_name" id="first_name" value="">
-							    </div>
-							    <div class="form-group">
-							    	<label>Lastname</label>
-								    <input type="text" class="form-control" placeholder="Last name" required="1" name="last_name" id="last_name" value="">
-							    </div>
-							    <div class="form-group">
-								    <label>Email address</label>
-								    <input type="email" class="form-control" placeholder="name@example.com" required="1" name="email" value="">
-								</div>
-								<div class="form-group">
-								    <label>Address (ship to this address)</label>
-								    <input type="text" class="form-control" placeholder="Your address" required="1" name="address" value="">
-								</div>
-								<div class="form-group">
-								    <label>City</label>
-								    <input type="text" class="form-control" placeholder="Your address city" required="1" name="city" value="">
-								</div>
-								<div class="form-group">
-								    <label>State/Province</label>
-								    <input type="text" class="form-control" placeholder="" required="1" name="state" value="">
-								</div>
-								<div class="form-group">
-								    <label>Zip/Postal code</label>
-								    <input type="text" class="form-control" placeholder="" required="1" name="zip" value="">
-								</div>
-								<div class="form-group">
-								    <label>Country</label>
-								    <select id="country" class="form-control selcls" name="country">
-								    	<!-- View country list get from magento-->
-								    </select>
-								</div>
-								<div class="form-group">
-								    <label>Telephone</label>
-								    <input type="text" class="form-control" placeholder="Your contact Telephone number" required="1" name="phone" value="">
-								</div>
-							    <div class="form-group">
-								    <label>Payment method: </label>
-								   	<select id="payment" class="form-control selcls" name="pay">
-								    	<!-- View payment list -->
-								    </select>
-							    </div>
-							    <div class="form-group">
-								    <label>Shipping method: </label>
-								   	<select id="shipping" class="form-control selcls" name="ship">
-								    	<!-- View shipping list -->
-								    </select>
-							    </div>
-							
-	                    </div>
-	                    <div class="panel-footer">
-						<div class="row text-center">
-							<div class="col-md-3 col-md-offset-9">
-								<input type="submit" class="btn btn-success btn-block" value="Checkout">
-							</div>
-						</div>
-					</form>
-				</div>
-                </div>
-            </div>
-    	</div>
+	</div>
 
-    	<input type="button" class="btn btn-danger pay" value="Show payment method"> 
-    	<input type="button" class="btn btn-success ship" value="Show shipping method"> 
-    <!-- Show payment -->	
-    	<div class="row">
-    		<div class="col-md-6 payDiv" style="display: none;">
-    			<div class="panel panel-danger">
-    				<div class="panel-heading" style="display: block;">
-                        <h5 class="panel-title">Payment list</h5>
-                    </div>
-                    <div class="panel-body">
-                    	<div id="pay-panel">
-                    		<!-- View payment list -->
-                    	</div>                    	
-                    </div>             
-    			</div>
-    		</div>
-    		<!-- Shipping -->
-    		<div class="col-md-6 shipDiv" style="display: none;">
-    			<div class="panel panel-success">
-    				<div class="panel-heading" style="display: block;">
-                        <h5 class="panel-title">Shipping list</h5>
-                    </div>
-                    <div class="panel-body">
-                    	<div id="ship-panel">
-                    		<!-- View shipping list -->
-                    	</div>                    	
-                    </div>             
-    			</div>
-    		</div>
-    	</div>
-    	 <div id="invoice">
-    	 </div>
-    </div>
+	<input type="button" class="btn btn-danger pay" value="Show payment method"> 
+	<input type="button" class="btn btn-success ship" value="Show shipping method"> 
+<!-- Show payment -->	
+	<div class="row">
+		<div class="col-md-6 payDiv" style="display: none;">
+			<div class="panel panel-danger">
+				<div class="panel-heading" style="display: block;">
+                    <h5 class="panel-title">Payment list</h5>
+                </div>
+                <div class="panel-body">
+                	<div id="pay-panel">
+                		<!-- View payment list -->
+                	</div>                    	
+                </div>             
+			</div>
+		</div>
+		<!-- Shipping -->
+		<div class="col-md-6 shipDiv" style="display: none;">
+			<div class="panel panel-success">
+				<div class="panel-heading" style="display: block;">
+                    <h5 class="panel-title">Shipping list</h5>
+                </div>
+                <div class="panel-body">
+                	<div id="ship-panel">
+                		<!-- View shipping list -->
+                	</div>                    	
+                </div>             
+			</div>
+		</div>
+	</div>
+	<div id="invoice">
+	</div>
+</div>
 </body>
 </html>
