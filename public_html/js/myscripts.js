@@ -33,7 +33,6 @@ jQuery.noConflict();
 	    //  $("#cart_total").html(total_price+" $");    
 	    // console.log(txt_link);
 	}
-
 	function add_to_cart(entity_id, name, sku, weight, price) {
         var singleproduct={};
         var customerId = $('#cus-id').val();
@@ -99,31 +98,6 @@ jQuery.noConflict();
 		htmlImg = `<img src="`+img+`" style="width:100%"/>`;
 		$('#show-img').html(htmlImg);
 	}
-	//check if cart empty
-//  $("#frm").submit(function(event) {
-//  	die('ssss');
-//  	if (shopping_cart.length<1) {
-// 		alert("Your shopping cart is empty!");
-// 		return false;
-// 	}
-// 	else {
-// 		console.log($(this).serializeArray());
-// 		event.preventDefault();
-// // 		var $inputs = $('#frm :input');
-// //         console.log(inputs);
-// // 	    var values = {};
-// // 	    $inputs.each(function() {
-// // 	        values[this.name] = $(this).val();
-// // //	        document.write($(this).val());
-// // 	    });
-// // 	    console.log(values);
-// // 	    var textB = "";
-// // 	    textB = '<p><b>Your name: </b>'+ values.first_name+'</p>';
-// // //	    $(document.body).append(form);
-// // 		$("#invoice").html(textB);
-// 		return true;
-// 	}
-//  });
 // SEARCH PRODUCT
 $(document).ready(function(){
 	$("#searchButton").click(function() {
@@ -189,54 +163,6 @@ $(document).ready(function(){
 
  	//checkout
 
-	// $("#frm").submit(function(){
-	// 	txt_cus_store += '?customer='+customerId+'&storeId='+storeId;
-	// 	$("#pro").css('display','block');
-	// 	$('#send').hide();
-	// 	$('#cartDiv').css('display','block');
- //    	$('html,body').animate({ scrollTop: $(".proDiv").offset().top},'slow');
-
-	// 	// if (shopping_cart.length<1) {
-	// 	// 	alert("Your shopping cart is empty!");
-	// 	// 	return false;
-	// 	// }
-	// 	// else {
-	// 	// 	var inputs={};
-	// 	// 	$.each($('#frm').serializeArray(),function(i, field) {
-	// 	// 		inputs[field.name]=field.value;
-	// 	// 	});
-	// 	// 	console.log(inputs);
-
-	// 	// 	event.preventDefault();
-	// 	// }	
-	// 	var textB = "<h3>Your invoice information</h3>";
-	// 	textB+=		"<p><b>Your name: </b>"+inputs.first_name+"&nbsp"+inputs.last_name+"</p>";
-	// 	textB+=		"<p><b>Your email address: </b>"+inputs.email+"</p>";
-	// 	textB+=		"<p><b>Your address receive delivery: </b>"+inputs.address+"</p>";
-	// 	textB+=		"<p><b>City: </b>"+inputs.city+"</p>";
-	// 	textB+=		"<p><b>State: </b>"+inputs.state+"</p>";
-	// 	textB+=		"<p><b>Country: </b>"+inputs.country+"</p>";
-	// 	textB+=		"<p><b>Your address zip/postal code: </b>"+inputs.zip+"</p>";
-	// 	textB+=		"<p><b>Your phone contact number: </b>"+inputs.phone+"</p>";
-	// 	textB+=		"<p><b>Payment method: </b>"+inputs.pay+"</p>";
-	// 	textB+=		"<p><b>Shipping method: </b>"+inputs.ship+"</p>";
-	// 	textB+=		"<h4><b>Your cart: </b>"+"</h4>";
-	// 	textB+=		'<ul class="in">';
-	// 	var i=0;
-	// 	var total_price = 0;
-	// 	for (var product in shopping_cart) {
-	// 		i++;
-	// 		textB+= '<li class="li_item"><p><b>Product '+i+':</b> '+shopping_cart[product].Name+'<br/>';
-	// 		textB+= "SKU: "+shopping_cart[product].SKU+"<br/>";
-	// 		textB+= "Weight: "+shopping_cart[product].Weight+"<br/>";
-	// 		textB+= "Price: "+shopping_cart[product].Price+" $<br/></p></li>";
-	// 		total_price+=shopping_cart[product].Price;
-	// 	}
-	// 	textB+= 	"</ul><p><h4>Total: "+total_price+ " $</h4></p>";
- // 	    $("#invoice").html(textB);
- // 	    $('html,body').animate({ scrollTop: $("#invoice").offset().top},'slow');
-
- //    });
 });
 
 
@@ -251,7 +177,7 @@ $(document).ready(function(){
     		storeId = $("#store-id").val();
     		txt_link += '?customerId='+customerId+'&storeId='+storeId;
 
-    	})
+    	});
     	$(".checkout-btn").click(function(){
     		if (shopping_cart.length<1) {
 			alert("Your shopping cart is empty!");
@@ -259,9 +185,23 @@ $(document).ready(function(){
 		}
 		else {
 			action='&action=submit';
+			ship = '&ship='+$('input[name="shipping_method"]:checked').val();
     		console.log(txt_link);
-		    window.open(link+txt_link+action);
+		    window.open(link+txt_link+ship+action);
 		}
+    	});
+    	$(".checkship-btn").click(function(){
+    		console.log(link+txt_link+'&ship=1');
+    		$.getJSON(link+txt_link+'&ship=1', function(data1) {
+		        //console.log(data);
+		        var textC='<p><label>Shipping method: </label></p>';
+		      	data1.forEach(function(d){
+					textC+=	`<input type="radio" name="shipping_method" value="${d.code}"/><lable> Title: ${d.carrier_title}: &nbsp ${d.method_title}</lable>`;
+					textC+=	`<br/>Price: ${d.price} $</br>`;
+			        $("#ship").html(textC);
+				})
+		    });
+		    $(".checkout-btn").css('display','block');
     	})
     	$(".cus").click(function() {
     		// CUSTOMER

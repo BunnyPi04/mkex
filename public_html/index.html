@@ -232,6 +232,9 @@
 								
 							</select>
 						</div>
+						<div class="form-group">
+							<p id="ship"></p>
+						</div>
 <!-- 						    <div class="form-group">
 						    <label>Payment method: </label>
 						   	<select id="payment" class="form-control selcls" name="pay">
@@ -280,12 +283,16 @@
 								Clear cart
 							</button>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-6">
 							<h4 class="text-right">Total <strong id="cart_total"></strong></h4>
 						</div>
 						<div class="col-md-3">
+							<input type="button" class="btn btn-success btn-block checkship-btn"
+								value="Check shipping"/>
+						</div>
+						<div class="col-md-3">
 							<input type="button" class="btn btn-success btn-block checkout-btn"
-								value="Checkout"/>
+								value="Checkout"  style="display: none;"/>
 						</div>
 					</div>
 				</div>
