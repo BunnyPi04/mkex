@@ -5,19 +5,53 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/myscripts.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 <script type="text/javascript">
-
+var link = 'http://magento1.dev/index.php/helloworld/index/';
+var textP='';
+	$(document).ready(function(){
+    $("button").click(function(){
+    	customerId = $('#customerId').val();
+    	storeId = $('#storeId').val();
+        $.post(link+"testpost",
+        {
+          customerId: customerId,
+          storeId: storeId,
+          productId: [903,902],
+          ship: 1
+        },
+        function(data){
+        	// var obj = JSON.parse(data);
+            data.forEach(function(d){
+				textP+=					`<p><b>Code: ${d.code}</b> <br/>Carrier_title: ${d.carrier_title} - ${d.method_title}<br/> Price: ${d.price}</p>`;
+		        $("#aaa").html(textP);
+			})
+        });
+    });
+});
 </script>
 	<div id="invoice">
-		
+
+		<select name="id" id="customerId">
+			<option value="135">John Doe</option>
+			<option value="127">John Smith</option>
+			<option value="136">Jane Doe</option>
+			<option value="104">Drew France</option>
+			<option value="103">Milo Vitti</option>
+		</select>
+		<select name="storeId" id="storeId">
+			<option value="1">English</option>
+			<option value="2">French</option>
+			<option value="3">German</option>
+		</select>
+		<button>click here</button>
+		<p id="aaa"></p>
 	</div>
 </body>
 </html>
